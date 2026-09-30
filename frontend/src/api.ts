@@ -1,7 +1,8 @@
 import type { Candidate, Job, Metrics, Stage } from "./types";
 
+const API_URL = "https://talentflow-api-rxti.onrender.com";
 async function request<T>(url: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(url, {
+  const res = await fetch(`${API_URL}${url}`, {
     headers: { "Content-Type": "application/json" },
     ...init,
   });
